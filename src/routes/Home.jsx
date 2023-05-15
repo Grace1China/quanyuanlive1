@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Hero from "../components/Hero";
-import Article from "../components/Article";
+import Article from "../components/ArticleCard";
 import { directus } from "../services/directus";
 import { formatRelativeTime } from "../utils/format-relative-time";
 

@@ -1,4 +1,4 @@
-import Article from "./Article";
+import Article from "./ArticleCard";
 
 export default function MoreArticles({ articles }) {
   return (

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
-import Article from "../components/Article";
+import ArticleCard from "../components/ArticleCard";
 import { directus } from "../services/directus";
 import { formatRelativeTime } from "../utils/format-relative-time";
 
@@ -44,7 +44,7 @@ export default function ArticleCat() {
           {articles && (
             <div className="articles-grid">
               {articles.map((article, index) => (
-                <Article
+                <ArticleCard
                   key={index}
                   article={article}
                   bordered={index !== articles.length - 1}

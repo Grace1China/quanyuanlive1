@@ -7,14 +7,16 @@ export default function Article({ article, bordered }) {
     <article className={`article ${bordered}`}>
       <div className="article__topWrapper">
         <div className="article__imageWrapper">
-          <img
+          <Link to={`/blog/${article.id}`}><img
             src={getAssetURL(article.cover_image)}
             alt=""
             loading="lazy"
           />
+          </Link>
+
         </div>
         <span aria-hidden="true" className="tag">
-          Writing
+          views:{article.views}
         </span>
       </div>
       <div className="article__bottomWrapper">

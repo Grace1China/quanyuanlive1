@@ -2,7 +2,9 @@ import { directus } from "../services/directus";
 import { useState, useContext } from 'react';
 import { useAppContext } from "../layouts/Default"
 import { Link, useParams, useNavigate, useLocation } from "react-router-dom";
-import { setToken } from "../utils/auth";
+import { setToken, setRefreshToken } from "../utils/auth";
+import { login } from "../api/api";
+
 
 export default function Form() {
   const [mail, setMail] = useState('');
@@ -81,25 +83,19 @@ export default function Form() {
   function submitForm(mail, pass) {
     // 模拟接口请求
     return new Promise((resolve, reject) => {
-      directus.auth.login({ email: mail, password: pass }).then((resp) => {
+      login({ email: mail, password: pass }).then((resp) => {
         console.log(resp)
         dispatch({ type: "SET_LOGIN_NAME", playload: mail })
-        setToken(resp.access_token)
+        setToken(resp.data.access_token)
+        setRefreshToken(resp.data.refresh_token)
         resolve();
       }).catch((err) => {
         console.log(err)
         reject(new Error('猜的不错，但答案不对。再试试看吧！'));
       })
-      // setTimeout(() => {
-      //   let shouldError = answer.toLowerCase() !== 'lima'
-      //   if (shouldError) {
-      //     reject(new Error('猜的不错，但答案不对。再试试看吧！'));
-      //   } else {
-      //     resolve();
-      //   }
-      // }, 1500);
     });
   }
+
 }
 
 
