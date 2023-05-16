@@ -1,7 +1,7 @@
 import Cookies from "js-cookie";
 
-const TokenKey = 'quanyuan-' + process.env.REACT_APP_DIRECTUS_URL + '-Access-Token'
-const refreshKey = 'quanyuan-' + process.env.REACT_APP_DIRECTUS_URL + '-Refresh-Token'
+const TokenKey = 'quanyuan-live-Access-Token'
+const refreshKey = 'quanyuan-live-Refresh-Token'
 
 export function getToken() {
   return Cookies.get(TokenKey);

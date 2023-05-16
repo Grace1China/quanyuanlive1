@@ -30,10 +30,9 @@ export default function Article() {
     setStatus('submitting');
     console.log(e)
     try {
-      // await directus.items('comment').createOne({ course: id, content: commentContent });
       await itemsPost('comment', { course: id, content: commentContent })
       commentsResp = await directus.items('comment').readByQuery({
-        fields: ["*"],//"author.avatar", "author.first_name", "author.last_name"
+        fields: ["*"],
         sort: "-id",
         filter: {
           course: {
@@ -71,7 +70,7 @@ export default function Article() {
         setArticle(formattedArticle);
 
         commentsResp = await directus.items('comment').readByQuery({
-          fields: ["*"],//"author.avatar", "author.first_name", "author.last_name"
+          fields: ["*"],
           sort: "-id",
           filter: {
             course: {
@@ -156,7 +155,6 @@ export default function Article() {
           </section>
         )
       }
-      {/* {moreArticles && <MoreArticles articles={moreArticles} />} */}
     </div >
   );
 }

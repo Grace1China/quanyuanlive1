@@ -4,6 +4,8 @@ import { Dropdown, Space } from 'antd';
 import { useAppContext } from "../layouts/Default"
 import { setToken, getToken, getRefreshToken, removeToken, removeRefreshToken } from "../utils/auth";
 import { logout } from "../api/api";
+import { Link } from "react-router-dom";
+
 
 
 
@@ -78,15 +80,15 @@ export default function Header() {
     <header>
       <nav className="container">
         <div className="left">
-          <a href="/">
+          <Link to={"/"}>
             <Logo />
-          </a>
+          </Link>
           <ul className="menu">
             {
               navs && navs.map((item, index) => {
                 return (
                   < li >
-                    <a href={`/cat/${item.slug}`}>{item.name}</a>
+                    <Link to={`/cat/${item.slug}`}>{item.name}</Link>
                   </li>
                 )
               })

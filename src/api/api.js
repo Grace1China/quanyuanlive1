@@ -32,6 +32,14 @@ export function logout(refreshToken) {
   })
 }
 
+
+export function apiCall(url, method, data) {
+  let opts = {
+    'post': { url, method: 'post', data }, 'get': { url, method: 'get', params: data }
+  }
+  return axios(opts[method])
+}
+
 export function itemsPost(table, data) {
   return axios({
     url: `/items/${table}`,

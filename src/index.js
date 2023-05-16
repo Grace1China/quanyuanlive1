@@ -17,8 +17,8 @@ import Login from "./routes/Login";
 
 render(
   <React.StrictMode>
-    <DefaultLayout>
-      <BrowserRouter>
+    <BrowserRouter>
+      <DefaultLayout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cat/:slug" element={<ArticleCat />} />
@@ -26,8 +26,8 @@ render(
           <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
-    </DefaultLayout>
+      </DefaultLayout>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

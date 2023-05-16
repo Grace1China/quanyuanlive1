@@ -33,7 +33,7 @@ const appReducer = (state = initialState, action) => {
   }
 };
 
-const storeDataWithExpiration = ({ key, data, expirationInMinutes = 60 } = {}) => {
+const storeDataWithExpiration = ({ key, data, expirationInMinutes = 60 * 24 * 7 } = {}) => {
   const expirationDate = new Date().getTime() + expirationInMinutes * 60 * 1000;
   const item = {
     data,

@@ -11,7 +11,7 @@ export default function ArticleCat() {
   useEffect(() => {
     async function fetchData() {
       const response = await directus.items("course").readByQuery({
-        fields: ["*"],//"author.avatar", "author.first_name", "author.last_name"
+        fields: ["*"],
         sort: "-publish_date",
         filter: {
           catId: {
@@ -28,13 +28,10 @@ export default function ArticleCat() {
           publish_date: formatRelativeTime(new Date(article.publish_date)),
         };
       });
-
-      // const [first, ...rest] = formattedArticles;
-      // setHero(first);
       setArticles(formattedArticles);
     }
     fetchData();
-  }, []);
+  }, [slug]);
 
   return (
     <main>
