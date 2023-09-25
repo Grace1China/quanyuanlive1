@@ -8,7 +8,7 @@ export default function Article({ article, bordered }) {
       <div className="article__topWrapper">
         <div className="article__imageWrapper">
           <Link to={`/blog/${article.id}`}><img
-            src={article.cover_image ? getAssetURL(article.cover_image) : 'http://bg.quanyuan.live/assets/09372518-3a60-4718-bf6a-fc52f25a3de5'}
+            src={article.cover_image ? getAssetURL(article.cover_image) : `${getAssetPrefix()}assets/09372518-3a60-4718-bf6a-fc52f25a3de5`}
             alt=""
             loading="lazy"
           />
