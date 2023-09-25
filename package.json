@@ -2,7 +2,7 @@
   "name": "directus-react-example",
   "private": true,
   "dependencies": {
-    "@craco/craco": "7.0.0-alpha.3",
+    "@craco/craco": "^7.0.0-alpha.3",
     "@directus/sdk": "9.12.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",

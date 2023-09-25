@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { getAssetURL } from "../utils/get-asset-url";
+import { getAssetURL, getAssetPrefix } from "../utils/get-asset-url";
 
 export default function Article({ article, bordered }) {
   return (
