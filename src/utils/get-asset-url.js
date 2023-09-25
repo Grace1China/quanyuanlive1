@@ -4,7 +4,6 @@ export function getAssetURL(id) {
 }
 
 export function getAssetPrefix(id) {
-  if (!id) return null;
   return `${process.env.REACT_APP_DIRECTUS_URL}/`;
 }
 
