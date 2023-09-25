@@ -135,6 +135,5 @@ service.interceptors.response.use((response) => {
 }, Err)
 
 export {
-  // installer as VueAxios,
   service as axios
 }
